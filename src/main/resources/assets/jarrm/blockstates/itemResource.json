@@ -1,0 +1,134 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "builtin/generated",
+    "textures": {
+      "layer0": "blocks/dirt"
+    },
+    "transform": "forge:default-item"
+  },
+  "variants": {
+    "type": {
+      "ruby": {
+        "textures": {
+          "layer0": "jarrm:items/gem/ruby"
+        }
+      },
+      "greensapphire": {
+        "textures": {
+          "layer0": "jarrm:items/gem/greenSapphire"
+        }
+      },
+      "sapphire": {
+        "textures": {
+          "layer0": "jarrm:items/gem/sapphire"
+        }
+      },
+      "ingotsilver": {
+        "textures": {
+          "layer0": "jarrm:items/ingot/ingotSilver"
+        }
+      },
+      "ingottin": {
+        "textures": {
+          "layer0": "jarrm:items/ingot/ingotTin"
+        }
+      },
+      "ingotcopper": {
+        "textures": {
+          "layer0": "jarrm:items/ingot/ingotCopper"
+        }
+      },
+      "nikolite": {
+        "textures": {
+          "layer0": "jarrm:items/dust/nikolite"
+        }
+      },
+      "ingotred": {
+        "textures": {
+          "layer0": "jarrm:items/ingot/ingotRed"
+        }
+      },
+      "ingotblue": {
+        "textures": {
+          "layer0": "jarrm:items/ingot/ingotBlue"
+        }
+      },
+      "ingotbrass": {
+        "textures": {
+          "layer0": "jarrm:items/ingot/ingotBrass"
+        }
+      },
+      "boulesilicon": {
+        "textures": {
+          "layer0": "jarrm:items/craftable/bouleSilicon"
+        }
+      },
+      "wafersilicon": {
+        "textures": {
+          "layer0": "jarrm:items/craftable/waferSilicon"
+        }
+      },
+      "waferblue": {
+        "textures": {
+          "layer0": "jarrm:items/craftable/waferBlue"
+        }
+      },
+      "waferred": {
+        "textures": {
+          "layer0": "jarrm:items/craftable/waferRed"
+        }
+      },
+      "tinplate": {
+        "textures": {
+          "layer0": "jarrm:items/craftable/tinPlate"
+        }
+      },
+      "finecopper": {
+        "textures": {
+          "layer0": "jarrm:items/craftable/fineCopper"
+        }
+      },
+      "fineiron": {
+        "textures": {
+          "layer0": "jarrm:items/craftable/fineIron"
+        }
+      },
+      "coppercoil": {
+        "textures": {
+          "layer0": "jarrm:items/craftable/copperCoil"
+        }
+      },
+      "btmotor": {
+        "textures": {
+          "layer0": "jarrm:items/craftable/btMotor"
+        }
+      },
+      "canvas": {
+        "textures": {
+          "layer0": "jarrm:items/craftable/canvas"
+        }
+      },
+      "nuggetiron": {
+        "textures": {
+          "layer0": "jarrm:items/nugget/nuggetIron"
+        }
+      },
+      "nuggetsilver": {
+        "textures": {
+          "layer0": "jarrm:items/nugget/nuggetSilver"
+        }
+      },
+      "nuggettin": {
+        "textures": {
+          "layer0": "jarrm:items/nugget/nuggetTin"
+        }
+      },
+      "nuggetcopper": {
+        "textures": {
+          "layer0": "jarrm:items/nugget/nuggetCopper"
+        }
+      }
+    }
+  }
+}

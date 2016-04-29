@@ -1,0 +1,24 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:cube_bottom_top",
+    "textures": {
+      "side": "jarrm:blocks/world/tree/rubberLogSide",
+      "bottom": "jarrm:blocks/world/tree/rubberLogBottom",
+      "top": "jarrm:blocks/world/tree/rubberLogBottom"
+    },
+    "transform": "forge:default-block"
+  },
+  "variants": {
+    "normal": {
+      "side": "jarrm:blocks/world/tree/rubberLogSide",
+      "bottom": "jarrm:blocks/world/tree/rubberLogBottom",
+      "top": "jarrm:blocks/world/tree/rubberLogBottom"
+    },
+    "inventory": {
+      "side": "jarrm:blocks/world/tree/rubberLogSide",
+      "bottom": "jarrm:blocks/world/tree/rubberLogBottom",
+      "top": "jarrm:blocks/world/tree/rubberLogBottom"
+    }
+  }
+}

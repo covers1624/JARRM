@@ -1,0 +1,22 @@
+[
+{
+  "modid": "jarrm",
+  "name": "JARRM",
+  "description": "JARRM, Just Another RedPower Replacement Mod.",
+  "version": "${VERSION}",
+  "mcversion": "1.9",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "covers1624"
+  ],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+    "Covers1624Lib"
+  ]
+}
+]

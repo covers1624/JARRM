@@ -1,0 +1,49 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:cube_all",
+    "textures": {
+      "all": "minecraft:blocks/dirt"
+    },
+    "transform": "forge:default-block"
+  },
+  "variants": {
+    "type": {
+      "marble": {
+        "textures": {
+          "all": "jarrm:blocks/world/stone/marble"
+        }
+      },
+      "basalt": {
+        "textures": {
+          "all": "jarrm:blocks/world/stone/basalt"
+        }
+      },
+      "marblebrick": {
+        "textures": {
+          "all": "jarrm:blocks/world/stone/marbleBrick"
+        }
+      },
+      "basaltcobble": {
+        "textures": {
+          "all": "jarrm:blocks/world/stone/basaltCobble"
+        }
+      },
+      "basaltbrick": {
+        "textures": {
+          "all": "jarrm:blocks/world/stone/basaltBrick"
+        }
+      },
+      "basaltcircle": {
+        "textures": {
+          "all": "jarrm:blocks/world/stone/basaltCircle"
+        }
+      },
+      "basaltpaver": {
+        "textures": {
+          "all": "jarrm:blocks/world/stone/basaltPaver"
+        }
+      }
+    }
+  }
+}

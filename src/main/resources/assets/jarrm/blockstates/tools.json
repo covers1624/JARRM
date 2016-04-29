@@ -1,0 +1,140 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "builtin/generated",
+    "textures": {
+      "layer0": "blocks/dirt"
+    },
+    "transform": "forge:default-tool"
+  },
+  "variants": {
+    "type": {
+      "screwdriver": {
+        "textures": {
+          "layer0": "jarrm:items/tools/screwdriver"
+        },
+        "transform": "forge:default-item"
+      },
+      "athame": {
+        "textures": {
+          "layer0": "jarrm:items/tools/athame"
+        }
+      },
+      "rubysword": {
+        "textures": {
+          "layer0": "jarrm:items/tools/sword/rubySword"
+        }
+      },
+      "greensapphiresword": {
+        "textures": {
+          "layer0": "jarrm:items/tools/sword/greenSapphireSword"
+        }
+      },
+      "sapphiresword": {
+        "textures": {
+          "layer0": "jarrm:items/tools/sword/sapphireSword"
+        }
+      },
+      "rubypickaxe": {
+        "textures": {
+          "layer0": "jarrm:items/tools/pickaxe/rubyPickaxe"
+        }
+      },
+      "greensapphirepickaxe": {
+        "textures": {
+          "layer0": "jarrm:items/tools/pickaxe/greenSapphirePickaxe"
+        }
+      },
+      "sapphirepickaxe": {
+        "textures": {
+          "layer0": "jarrm:items/tools/pickaxe/sapphirePickaxe"
+        }
+      },
+      "rubyspade": {
+        "textures": {
+          "layer0": "jarrm:items/tools/spade/rubySpade"
+        }
+      },
+      "greensapphirespade": {
+        "textures": {
+          "layer0": "jarrm:items/tools/spade/greenSapphireSpade"
+        }
+      },
+      "sapphirespade": {
+        "textures": {
+          "layer0": "jarrm:items/tools/spade/sapphireSpade"
+        }
+      },
+      "rubyhoe": {
+        "textures": {
+          "layer0": "jarrm:items/tools/hoe/rubyHoe"
+        }
+      },
+      "greensapphirehoe": {
+        "textures": {
+          "layer0": "jarrm:items/tools/hoe/greenSapphireHoe"
+        }
+      },
+      "sapphirehoe": {
+        "textures": {
+          "layer0": "jarrm:items/tools/hoe/sapphireHoe"
+        }
+      },
+      "rubyaxe": {
+        "textures": {
+          "layer0": "jarrm:items/tools/axe/rubyAxe"
+        }
+      },
+      "greensapphireaxe": {
+        "textures": {
+          "layer0": "jarrm:items/tools/axe/greenSapphireAxe"
+        }
+      },
+      "sapphireaxe": {
+        "textures": {
+          "layer0": "jarrm:items/tools/axe/sapphireAxe"
+        }
+      },
+      "woodsickle": {
+        "textures": {
+          "layer0": "jarrm:items/tools/sickle/woodSickle"
+        }
+      },
+      "stonesickle": {
+        "textures": {
+          "layer0": "jarrm:items/tools/sickle/stoneSickle"
+        }
+      },
+      "ironsickle": {
+        "textures": {
+          "layer0": "jarrm:items/tools/sickle/ironSickle"
+        }
+      },
+      "goldsickle": {
+        "textures": {
+          "layer0": "jarrm:items/tools/sickle/goldSickle"
+        }
+      },
+      "diamondsickle": {
+        "textures": {
+          "layer0": "jarrm:items/tools/sickle/diamondSickle"
+        }
+      },
+      "rubysickle": {
+        "textures": {
+          "layer0": "jarrm:items/tools/sickle/rubySickle"
+        }
+      },
+      "greensapphiresickle": {
+        "textures": {
+          "layer0": "jarrm:items/tools/sickle/greenSapphireSickle"
+        }
+      },
+      "sapphiresickle": {
+        "textures": {
+          "layer0": "jarrm:items/tools/sickle/sapphireSickle"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:cube_all",
+    "textures": {
+      "all": "minecraft:blocks/dirt"
+    },
+    "transform": "forge:default-block"
+  },
+  "variants": {
+    "type": {
+      "oreruby": {
+        "textures": {
+          "all": "jarrm:blocks/ore/oreRuby"
+        }
+      },
+      "oregreensapphire": {
+        "textures": {
+          "all": "jarrm:blocks/ore/oreGreenSapphire"
+        }
+      },
+      "oresapphire": {
+        "textures": {
+          "all": "jarrm:blocks/ore/oreSapphire"
+        }
+      },
+      "oresilver": {
+        "textures": {
+          "all": "jarrm:blocks/ore/oreSilver"
+        }
+      },
+      "oretin": {
+        "textures": {
+          "all": "jarrm:blocks/ore/oreTin"
+        }
+      },
+      "orecopper": {
+        "textures": {
+          "all": "jarrm:blocks/ore/oreCopper"
+        }
+      },
+      "orenikolite": {
+        "textures": {
+          "all": "jarrm:blocks/ore/oreNikolite"
+        }
+      },
+      "oretungsten": {
+        "textures": {
+          "all": "jarrm:blocks/ore/oreTungsten"
+        }
+      }
+    }
+  }
+}

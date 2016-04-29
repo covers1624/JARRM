@@ -1,0 +1,6 @@
+{
+  "parent": "block/leaves",
+  "textures": {
+    "all": "jarrm:blocks/world/tree/rubberLeaves"
+  }
+}

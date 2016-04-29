@@ -1,4 +1,4 @@
-JARRM (Just another Redpower remake mod.)
+JARRM (Just Another RedPower Replacement Mod.)
 ==============
 We use the Faithfull 32X32 Textures!
 Go find them [here]

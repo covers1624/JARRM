@@ -21,7 +21,7 @@ import static covers1624.jarrm.reference.Reference.*;
 /**
  * Created by covers1624 on 2/5/2016.
  */
-@Mod(modid = MOD_ID, name = MOD_NAME, version = VERSION, guiFactory = GUI_FACTORY_CLASS)
+@Mod(modid = MOD_ID, name = MOD_NAME, version = VERSION, guiFactory = GUI_FACTORY_CLASS, dependencies = MOD_DEPENDENCIES)
 public class JARRM {
 
     public static SimpleCreativeTab worldCreativeTab = new SimpleCreativeTab("jarrm.world", "jarrm:ores", true);

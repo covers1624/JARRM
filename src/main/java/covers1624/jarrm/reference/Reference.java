@@ -1,18 +1,17 @@
 package covers1624.jarrm.reference;
 
+import codechicken.core.launch.CodeChickenCorePlugin;
+
 /**
  * Created by covers1624 on 2/5/2016.
  */
 public class Reference {
-    // Mod ID's
-    public static final String MOD_ID = "jarrm";
 
-    // Mod Names
+    public static final String MOD_ID = "jarrm";
     public static final String MOD_NAME = "JARRM";
     public static final String MOD_DESCRIPTION = "Just Another RedPower Replacement Mod";
-
-    // Version
     public static final String VERSION = "${VERSION}";
+    public static final String MOD_DEPENDENCIES = "required-after:CodeChickenCore@[" + CodeChickenCorePlugin.version + ",);required-after:Covers1624Lib";
 
     // Resource Utils.
     public static final String MOD_PREFIX = MOD_ID.toLowerCase() + ":";

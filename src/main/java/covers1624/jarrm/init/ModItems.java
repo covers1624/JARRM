@@ -178,11 +178,9 @@ public class ModItems {
         registerItem(itemGoldSickle, "goldSickle");
         registerItem(itemDiamondSickle, "diamondSickle");
 
-
         registerItem(itemRubySickle, "rubySickle");
         registerItem(itemGreenSapphireSickle, "greenSapphireSickle");
         registerItem(itemSapphireSickle, "sapphireSickle");
-
 
     }
 
@@ -233,7 +231,7 @@ public class ModItems {
         ModelLoader.setCustomModelResourceLocation(item, meta, screwdriverLocation);
     }
 
-    private static void registerItem(Item item, String registryName){
+    private static void registerItem(Item item, String registryName) {
         GameRegistry.register(item.setRegistryName(registryName));
     }
 }

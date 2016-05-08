@@ -23,13 +23,12 @@ public abstract class AbstractModule {
      */
     public List<String> incompatableMods = new ArrayList<String>();
 
-
     //TODO Make these less.. Open. Only allow certain things to happen here, ASM Checks??
-	public abstract void preInit(FMLPreInitializationEvent event);
+    public abstract void preInit(FMLPreInitializationEvent event);
 
-	public abstract void init(FMLInitializationEvent event);
+    public abstract void init(FMLInitializationEvent event);
 
-	public abstract void postInit(FMLPostInitializationEvent event);
+    public abstract void postInit(FMLPostInitializationEvent event);
 
     /**
      * Gets the unique name for this recipe handler.

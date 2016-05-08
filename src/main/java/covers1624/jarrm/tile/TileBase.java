@@ -124,8 +124,8 @@ public class TileBase extends TileEntity implements ITickable, IGuiTile, IHarves
         }
     }
 
-    private void sendActiveUpdatePacket(){
-        if (!worldObj.isRemote){
+    private void sendActiveUpdatePacket() {
+        if (!worldObj.isRemote) {
             ActiveUpdatePacket packet = new ActiveUpdatePacket(this, getPos());
             JARRM.packetPipeline.sendToAllAround(packet, new NetworkRegistry.TargetPoint(worldObj.provider.getDimension(), getPos().getX(), getPos().getY(), getPos().getZ(), 128));
         }
@@ -147,7 +147,7 @@ public class TileBase extends TileEntity implements ITickable, IGuiTile, IHarves
         writeNBT(compound);
     }
 
-    public void writeNBT(NBTTagCompound tagCompound){
+    public void writeNBT(NBTTagCompound tagCompound) {
         tagCompound.setString("Rotation", facing.getName2());
         tagCompound.setBoolean("Active", isActive);
     }
@@ -158,7 +158,7 @@ public class TileBase extends TileEntity implements ITickable, IGuiTile, IHarves
         readNBT(compound);
     }
 
-    public void readNBT(NBTTagCompound tagCompound){
+    public void readNBT(NBTTagCompound tagCompound) {
         facing = EnumFacing.byName(tagCompound.getString("Rotation"));
         isActive = tagCompound.getBoolean("Active");
     }

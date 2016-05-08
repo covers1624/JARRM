@@ -60,10 +60,12 @@ public class ModBlocks {
         rubberLeaves = new BlockRubberLeaves();
         //GameRegistry.registerBlock(rubberLeaves, "rubberLeaves");
         GameRegistry.register(rubberLeaves.setRegistryName("rubberLeaves"));
+        GameRegistry.register(new ItemBlock(rubberLeaves).setRegistryName("rubberLeaves"));
 
         rubberLog = new BlockRubberLog();
         //GameRegistry.registerBlock(rubberLog, "rubberLog");
         GameRegistry.register(rubberLog.setRegistryName("rubberLog"));
+        GameRegistry.register(new ItemBlock(rubberLog).setRegistryName("rubberLog"));
 
     }
 

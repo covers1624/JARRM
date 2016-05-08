@@ -40,7 +40,6 @@ public class BlockOre extends Block {
         return getMetaFromState(state);
     }
 
-
     @Override
     public IBlockState getStateFromMeta(int meta) {
         return getBlockState().getBaseState().withProperty(VARIANTS, oreNamesList.get(meta));

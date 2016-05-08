@@ -3,9 +3,11 @@ package covers1624.jarrm.block;
 import covers1624.jarrm.JARRM;
 import covers1624.jarrm.block.itemblock.ItemBlockMultiType;
 import covers1624.jarrm.init.ModBlocks;
+import covers1624.jarrm.util.LogHelper;
+import covers1624.jarrm.worldgen.WorldGeneratorRubberTree;
 import covers1624.lib.api.block.property.PropertyString;
-import covers1624.lib.util.LogHelper;
 import net.minecraft.block.BlockBush;
+import net.minecraft.block.IGrowable;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -32,7 +34,7 @@ import static covers1624.jarrm.reference.VariantReference.plantableNamesList;
 /**
  * Created by covers1624 on 4/3/2016.
  */
-public class BlockPlantable extends BlockBush {
+public class BlockPlantable extends BlockBush implements IGrowable {
 
     public static final PropertyString VARIANTS = new PropertyString("type", plantableNamesList);
 
@@ -74,18 +76,18 @@ public class BlockPlantable extends BlockBush {
             super.updateTick(worldIn, pos, state, rand);
 
             if (worldIn.getLightFromNeighbors(pos.up()) >= 9 && rand.nextInt(7) == 0) {
-                grow(worldIn, pos, state, rand);
+                attemptTreeGen(worldIn, pos, state, rand);
             }
         }
     }
 
-    public void grow(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-        attemptTreeGen(worldIn, pos, state, rand);
-    }
-
     public void attemptTreeGen(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-        //TODO
+        //StructureBlueprint treeStructure = StructureUtils.fromFile(new ResourceLocation("jarrm:worldgen/tree.dat"));
+        //treeStructure.generateStructure(worldIn, pos);
+        WorldGeneratorRubberTree tree = new WorldGeneratorRubberTree(40);//TODO
+        tree.generate(worldIn, rand, pos);
         LogHelper.info("Tree Gen!");
+
     }
 
     @Override
@@ -110,4 +112,18 @@ public class BlockPlantable extends BlockBush {
         }
     }
 
+    @Override
+    public boolean canGrow(World worldIn, BlockPos pos, IBlockState state, boolean isClient) {
+        return true;
+    }
+
+    @Override
+    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
+        return true;
+    }
+
+    @Override
+    public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state) {
+        attemptTreeGen(worldIn, pos, state, rand);
+    }
 }

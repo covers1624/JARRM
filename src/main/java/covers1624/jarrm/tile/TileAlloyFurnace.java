@@ -2,8 +2,8 @@ package covers1624.jarrm.tile;
 
 import com.google.common.collect.Lists;
 import covers1624.jarrm.api.recipe.AlloyFurnaceRecipe;
-import covers1624.jarrm.registry.AlloyFurnaceRegistry;
 import covers1624.jarrm.reference.GuiIds;
+import covers1624.jarrm.registry.AlloyFurnaceRegistry;
 import covers1624.lib.util.BlockUtils;
 import covers1624.lib.util.ItemUtils;
 import net.minecraft.block.state.IBlockState;

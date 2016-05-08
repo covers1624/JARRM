@@ -1,7 +1,6 @@
 package covers1624.jarrm.asm;
 
 import covers1624.jarrm.util.LogHelper;
-import net.minecraft.client.Minecraft;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
 
 import java.util.Map;

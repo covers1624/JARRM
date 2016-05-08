@@ -16,7 +16,7 @@ public class RotationUpdatePacket extends AbstractUpdatePacket {
 
     private EnumFacing facing;
 
-    public RotationUpdatePacket(){
+    public RotationUpdatePacket() {
     }
 
     public RotationUpdatePacket(IRotatableTile tile, BlockPos pos) {

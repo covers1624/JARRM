@@ -21,7 +21,6 @@ public class ModuleManager {
     private static ArrayList<AbstractModule> modules = new ArrayList<AbstractModule>();
     public static ImmutableList<String> loadedModules;
 
-
     public static void findModules() {
         ClassDiscoverer discoverer = new ClassDiscoverer(new IStringMatcher() {
             @Override
@@ -113,8 +112,6 @@ public class ModuleManager {
         }
         return list + ".";
     }
-
-
 
     public static void preInitModules(FMLPreInitializationEvent event) {
         for (AbstractModule module : modules) {

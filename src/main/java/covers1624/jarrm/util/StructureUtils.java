@@ -8,7 +8,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -31,9 +30,9 @@ public class StructureUtils {
 
     /**
      * Converts the file to nbt then nbt to structure.
-     */
+     *///TODO Cache loaded blueprints.
     public static StructureBlueprint fromFile(ResourceLocation location) {
-        InputStream fileStream = StructureUtils.class.getResourceAsStream(String.format("assets/%s/%s", location.getResourceDomain(), location.getResourcePath()));
+        InputStream fileStream = StructureUtils.class.getResourceAsStream(String.format("/assets/%s/%s", location.getResourceDomain(), location.getResourcePath()));
         return fromNBT(readCompressedToTag(fileStream));
     }
 
@@ -51,7 +50,7 @@ public class StructureUtils {
             BlockPos pos = new BlockPos(blockTag.getInteger("X"), blockTag.getInteger("Y"), blockTag.getInteger("Z"));
             ResourceLocation blockLocation = idToBlockMap.get(blockTag.getInteger("Id"));
             int meta = blockTag.getInteger("Meta");
-            Block block = GameRegistry.findBlock(blockLocation.getResourceDomain(), blockLocation.getResourcePath());
+            Block block = Block.blockRegistry.getObject(blockLocation);
             if (block == null) {
                 throw new RuntimeException(String.format("Unable to continue parsing StructureBlueprint, %s is not known to GameRegistry", blockLocation));
             }
@@ -148,7 +147,9 @@ public class StructureUtils {
     public static void parseBlockMap() {
         try {
             if (!isBlockMapParsed) {
-                InputStream fileStream = StructureUtils.class.getResourceAsStream(String.format("assets/%s/%s", blockMapResource.getResourceDomain(), blockMapResource.getResourcePath()));
+                isBlockMapParsed = true;
+                InputStream fileStream = StructureUtils.class.getResourceAsStream(String.format("/assets/%s/%s", blockMapResource.getResourceDomain(), blockMapResource.getResourcePath()));
+                LogHelper.info(fileStream != null);
                 DataInputStream inputStream = new DataInputStream(new GZIPInputStream(fileStream));
 
                 while (true) {
@@ -162,10 +163,9 @@ public class StructureUtils {
                     }
                 }
                 inputStream.close();
-                isBlockMapParsed = true;//Only set this to true if it has been parsed successfully.
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException("Error parsing blockMap.dat!", e);
         }
     }
 

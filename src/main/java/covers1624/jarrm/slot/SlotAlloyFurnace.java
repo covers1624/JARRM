@@ -6,43 +6,43 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 
 public class SlotAlloyFurnace extends Slot {
-	private EntityPlayer player;
-	int totalCrafted;
+    private EntityPlayer player;
+    int totalCrafted;
 
-	public SlotAlloyFurnace(EntityPlayer player, IInventory inventory, int id, int x, int y) {
-		super(inventory, id, x, y);
-		this.player = player;
-	}
+    public SlotAlloyFurnace(EntityPlayer player, IInventory inventory, int id, int x, int y) {
+        super(inventory, id, x, y);
+        this.player = player;
+    }
 
-	@Override
-	public boolean isItemValid(ItemStack stack) {
-		return false;
-	}
+    @Override
+    public boolean isItemValid(ItemStack stack) {
+        return false;
+    }
 
-	@Override
-	public ItemStack decrStackSize(int amount) {
-		if (getHasStack()) {
+    @Override
+    public ItemStack decrStackSize(int amount) {
+        if (getHasStack()) {
             totalCrafted += Math.min(amount, getStack().stackSize);
-		}
+        }
 
-		return super.decrStackSize(amount);
-	}
+        return super.decrStackSize(amount);
+    }
 
-	@Override
-	public void onPickupFromSlot(EntityPlayer player, ItemStack stack) {
-		onCrafting(stack);
-		super.onPickupFromSlot(player, stack);
-	}
+    @Override
+    public void onPickupFromSlot(EntityPlayer player, ItemStack stack) {
+        onCrafting(stack);
+        super.onPickupFromSlot(player, stack);
+    }
 
-	@Override
-	protected void onCrafting(ItemStack stack, int amount) {
-		totalCrafted += amount;
-		onCrafting(stack);
-	}
+    @Override
+    protected void onCrafting(ItemStack stack, int amount) {
+        totalCrafted += amount;
+        onCrafting(stack);
+    }
 
-	@Override
-	protected void onCrafting(ItemStack stack) {
-		stack.onCrafting(player.worldObj, player, totalCrafted);
-		totalCrafted = 0;
-	}
+    @Override
+    protected void onCrafting(ItemStack stack) {
+        stack.onCrafting(player.worldObj, player, totalCrafted);
+        totalCrafted = 0;
+    }
 }

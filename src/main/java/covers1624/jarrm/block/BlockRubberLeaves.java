@@ -4,7 +4,6 @@ import covers1624.jarrm.JARRM;
 import covers1624.jarrm.init.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
@@ -239,6 +238,10 @@ public class BlockRubberLeaves extends Block implements IShearable {
     @Override
     protected BlockStateContainer createBlockState() {
         return new BlockStateContainer(this, CHECK_DECAY, DECAYABLE);
+    }
+
+    public IBlockState getWorldGenState() {
+        return getDefaultState().withProperty(CHECK_DECAY, false).withProperty(DECAYABLE, true);
     }
 
     @Override

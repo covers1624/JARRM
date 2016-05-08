@@ -12,7 +12,7 @@ import net.minecraft.item.ItemStack;
  */
 public class Recipes {
 
-    public static void init(){
+    public static void init() {
         registerAlloyRecipes();
     }
 

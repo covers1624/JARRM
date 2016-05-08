@@ -11,7 +11,7 @@ import net.minecraft.item.ItemSword;
 /**
  * Created by covers1624 on 3/29/2016.
  */
-public class ItemAthame extends ItemSword{
+public class ItemAthame extends ItemSword {
     public ItemAthame() {
         super(ToolMaterial.DIAMOND);
         setMaxDamage(100);

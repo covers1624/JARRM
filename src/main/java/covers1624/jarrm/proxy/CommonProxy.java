@@ -6,7 +6,7 @@ import covers1624.jarrm.handler.GuiHandler;
 import covers1624.jarrm.init.ModBlocks;
 import covers1624.jarrm.init.ModItems;
 import covers1624.jarrm.init.Recipes;
-import covers1624.jarrm.worldgen.WorldGeneratorOre;
+import covers1624.jarrm.worldgen.JARRMWorldGenerator;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -31,7 +31,7 @@ public class CommonProxy {
 
     public void init(FMLInitializationEvent event) {
         Recipes.init();
-        GameRegistry.registerWorldGenerator(new WorldGeneratorOre(), 0);
+        GameRegistry.registerWorldGenerator(new JARRMWorldGenerator(), 0);
     }
 
     public void postInit(FMLPostInitializationEvent event) {

@@ -1,7 +1,7 @@
 package covers1624.jarrm.tile;
 
 import com.google.common.collect.Lists;
-import covers1624.jarrm.api.recipe.AlloyFurnaceRecipe;
+import covers1624.jarrm.api.recipe.IAlloyRecipe;
 import covers1624.jarrm.reference.GuiIds;
 import covers1624.jarrm.registry.AlloyFurnaceRegistry;
 import covers1624.lib.util.BlockUtils;
@@ -101,22 +101,22 @@ public class TileAlloyFurnace extends TileBase implements ISidedInventory {
     }
 
     boolean canSmelt() {
-        AlloyFurnaceRecipe recipe = AlloyFurnaceRegistry.getRecipeClass(contents);
+        IAlloyRecipe recipe = AlloyFurnaceRegistry.getRecipeClass(contents);
         if (recipe == null) {
             return false;
         } else if (contents[10] == null) {
             return true;
-        } else if (!contents[10].isItemEqual(recipe.getRecipeOutput())) {
+        } else if (!contents[10].isItemEqual(recipe.getRecipeResult())) {
             return false;
         } else {
-            int size = contents[10].stackSize + recipe.getRecipeOutput().stackSize;
-            return size <= getInventoryStackLimit() && size <= recipe.getRecipeOutput().getMaxStackSize();
+            int size = contents[10].stackSize + recipe.getRecipeResult().stackSize;
+            return size <= getInventoryStackLimit() && size <= recipe.getRecipeResult().getMaxStackSize();
         }
     }
 
     void smeltItem() {
         if (canSmelt()) {
-            AlloyFurnaceRecipe recipe = AlloyFurnaceRegistry.getRecipeClass(contents);
+            IAlloyRecipe recipe = AlloyFurnaceRegistry.getRecipeClass(contents);
             ItemStack crafted = AlloyFurnaceRegistry.doAlloyCrafting(recipe, contents);
             if (crafted != null) {
                 if (contents[10] == null) {

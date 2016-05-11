@@ -31,6 +31,8 @@ public class ConfigurationHandler {
     public static boolean generateNikolite;
     public static boolean generateTungsten;
 
+    public static boolean generateMarble;
+
     // Features
     public static boolean splashScreenImplementation;
 
@@ -54,6 +56,7 @@ public class ConfigurationHandler {
         generateCopper = configuration.getBoolean("GenerateCopper", CATEGORY_WORLD, true, "Allows Copper to spawn in the world.");
         generateNikolite = configuration.getBoolean("GenerateNikolite", CATEGORY_WORLD, true, "Allows Nikolite to spawn in the world.");
         generateTungsten = configuration.getBoolean("GenerateTungsten", CATEGORY_WORLD, true, "Allows Tungsten to spawn in the world.");
+        generateMarble = configuration.getBoolean("GenerateMarble", CATEGORY_WORLD, true, "Allows Marble to spawn in the world.");
         //Features
         splashScreenImplementation = configuration.getBoolean("Splash Screen Implementation", CATEGORY_FEATURES, true, "Shows the progress of some loading events on the FML Splash Screen.");
         configuration.save();

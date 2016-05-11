@@ -1,8 +1,10 @@
 package covers1624.jarrm.registry;
 
 import com.google.common.collect.ImmutableList;
-import covers1624.jarrm.api.recipe.AlloyFurnaceRecipe;
+import covers1624.jarrm.api.recipe.DictionaryStack;
+import covers1624.jarrm.api.recipe.IAlloyRecipe;
 import covers1624.jarrm.init.OreDict;
+import covers1624.jarrm.registry.recipe.AlloyFurnaceRecipe;
 import covers1624.lib.util.ItemUtils;
 import net.minecraft.item.ItemStack;
 
@@ -14,15 +16,15 @@ import java.util.List;
  */
 public class AlloyFurnaceRegistry {
 
-    private static ArrayList<AlloyFurnaceRecipe> recipes = new ArrayList<AlloyFurnaceRecipe>();
+    private static ArrayList<IAlloyRecipe> recipes = new ArrayList<IAlloyRecipe>();
 
     public static void addAlloyFurnaceRecipe(ItemStack result, ItemStack... input) {
         AlloyFurnaceRecipe recipe = new AlloyFurnaceRecipe(result, input);
         recipes.add(recipe);
     }
 
-    public static AlloyFurnaceRecipe getRecipeClass(ItemStack[] craftMatrix) {
-        for (AlloyFurnaceRecipe recipeObject : recipes) {
+    public static IAlloyRecipe getRecipeClass(ItemStack[] craftMatrix) {
+        for (IAlloyRecipe recipeObject : recipes) {
             if (recipeObject.isRecipe(craftMatrix)) {
                 return recipeObject;
             }
@@ -30,16 +32,16 @@ public class AlloyFurnaceRegistry {
         return null;
     }
 
-    public static AlloyFurnaceRecipe getRecipeFromOutput(ItemStack stack) {
-        for (AlloyFurnaceRecipe recipe : recipes) {
-            if (recipe.getRecipeOutput().isItemEqual(stack)) {
+    public static IAlloyRecipe getRecipeFromOutput(ItemStack stack) {
+        for (IAlloyRecipe recipe : recipes) {
+            if (ItemUtils.areStacksSameTypeCrafting(recipe.getRecipeResult(), stack)) {
                 return recipe;
             }
         }
         return null;
     }
 
-    public static List<AlloyFurnaceRecipe> getAllRecipes() {
+    public static List<IAlloyRecipe> getAllRecipes() {
         return ImmutableList.copyOf(recipes);
     }
 
@@ -84,11 +86,11 @@ public class AlloyFurnaceRegistry {
         return finish;
     }
 
-    public static ItemStack doAlloyCrafting(AlloyFurnaceRecipe recipe, ItemStack[] craftMatrix) {
-        for (ItemStack object : recipe.getRecipeInputs()) {
-            int amountLeft = object.stackSize;
+    public static ItemStack doAlloyCrafting(IAlloyRecipe recipe, ItemStack[] craftMatrix) {
+        for (Object object : recipe.getRecipeInputs()) {
+            int amountLeft = (object instanceof ItemStack ? ((ItemStack) object).stackSize : ((DictionaryStack) object).getStackSize());
             for (int i = 0; i < 9; i++) {
-                if (craftMatrix[i] != null && (ItemUtils.areStacksSameTypeCrafting(object, craftMatrix[i]) || OreDict.areOreStacksSame(object, craftMatrix[i]))) {
+                if (craftMatrix[i] != null && OreDict.areStacksSame(object, craftMatrix[i])) {
                     int toUse = Math.min(craftMatrix[i].stackSize, amountLeft);
                     craftMatrix[i].stackSize -= toUse;
                     if (craftMatrix[i].stackSize <= toUse) {
@@ -101,6 +103,6 @@ public class AlloyFurnaceRegistry {
                 }
             }
         }
-        return recipe.getRecipeOutput();
+        return recipe.getRecipeResult();
     }
 }

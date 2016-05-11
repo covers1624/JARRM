@@ -14,18 +14,20 @@ import java.util.Random;
 /**
  * Created by covers1624 on 3/26/2016.
  */
-public class WorldGeneratorOre implements IWorldGenerator {
+public class JARRMWorldGenerator implements IWorldGenerator {
 
-    WorldGenMinable oreRuby;
-    WorldGenMinable oreGreenSapphire;
-    WorldGenMinable oreSapphire;
-    WorldGenMinable oreSilver;
-    WorldGenMinable oreCopper;
-    WorldGenMinable oreTin;
-    WorldGenMinable oreNikolite;
-    WorldGenMinable oreTungsten;
+    private WorldGenMinable oreRuby;
+    private WorldGenMinable oreGreenSapphire;
+    private WorldGenMinable oreSapphire;
+    private WorldGenMinable oreSilver;
+    private WorldGenMinable oreCopper;
+    private WorldGenMinable oreTin;
+    private WorldGenMinable oreNikolite;
+    private WorldGenMinable oreTungsten;
 
-    public WorldGeneratorOre() {
+    private WorldGenMinable marbleVein;
+
+    public JARRMWorldGenerator() {
         oreRuby = new WorldGenMinable(ModBlocks.blockOre.getStateFromMeta(0), 7);
         oreGreenSapphire = new WorldGenMinable(ModBlocks.blockOre.getStateFromMeta(1), 7);
         oreSapphire = new WorldGenMinable(ModBlocks.blockOre.getStateFromMeta(2), 7);
@@ -39,16 +41,16 @@ public class WorldGeneratorOre implements IWorldGenerator {
     @Override
     public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
         if (world.provider.isSurfaceWorld()) {
-            generateUndergroundOres(world, chunkX * 16, chunkZ * 16, random);
+            generateOres(world, chunkX * 16, chunkZ * 16, random);
         }
     }
 
-    private void generateUndergroundOres(World world, int xChunk, int zChunk, Random random) {
+    private void generateOres(World world, int xChunk, int zChunk, Random random) {
         int xPos;
         int yPos;
         int zPos;
         if (ConfigurationHandler.generateRuby) {
-            for (int i = 0; i <= 2; i++) {
+            for (int i = 0; i < 2; i++) {
                 xPos = xChunk + random.nextInt(16);
                 yPos = random.nextInt(48);
                 zPos = zChunk + random.nextInt(16);
@@ -56,7 +58,7 @@ public class WorldGeneratorOre implements IWorldGenerator {
             }
         }
         if (ConfigurationHandler.generateSapphire) {
-            for (int i = 0; i <= 2; i++) {
+            for (int i = 0; i < 2; i++) {
                 xPos = xChunk + random.nextInt(16);
                 yPos = random.nextInt(48);
                 zPos = zChunk + random.nextInt(16);
@@ -64,7 +66,7 @@ public class WorldGeneratorOre implements IWorldGenerator {
             }
         }
         if (ConfigurationHandler.generateGreenSapphire) {
-            for (int i = 0; i <= 2; i++) {
+            for (int i = 0; i < 2; i++) {
                 xPos = xChunk + random.nextInt(16);
                 yPos = random.nextInt(48);
                 zPos = zChunk + random.nextInt(16);
@@ -72,7 +74,7 @@ public class WorldGeneratorOre implements IWorldGenerator {
             }
         }
         if (ConfigurationHandler.generateSilver) {
-            for (int i = 0; i <= 4; i++) {
+            for (int i = 0; i < 4; i++) {
                 xPos = xChunk + random.nextInt(16);
                 yPos = random.nextInt(32);
                 zPos = zChunk + random.nextInt(16);
@@ -80,7 +82,7 @@ public class WorldGeneratorOre implements IWorldGenerator {
             }
         }
         if (ConfigurationHandler.generateCopper) {
-            for (int i = 0; i <= 20; i++) {
+            for (int i = 0; i < 20; i++) {
                 xPos = xChunk + random.nextInt(16);
                 yPos = random.nextInt(64);
                 zPos = zChunk + random.nextInt(16);
@@ -88,7 +90,7 @@ public class WorldGeneratorOre implements IWorldGenerator {
             }
         }
         if (ConfigurationHandler.generateTin) {
-            for (int i = 0; i <= 10; i++) {
+            for (int i = 0; i < 10; i++) {
                 xPos = xChunk + random.nextInt(16);
                 yPos = random.nextInt(48);
                 zPos = zChunk + random.nextInt(16);
@@ -96,7 +98,7 @@ public class WorldGeneratorOre implements IWorldGenerator {
             }
         }
         if (ConfigurationHandler.generateNikolite) {
-            for (int i = 0; i <= 4; i++) {
+            for (int i = 0; i < 4; i++) {
                 xPos = xChunk + random.nextInt(16);
                 yPos = 10 + random.nextInt(16);
                 zPos = zChunk + random.nextInt(16);
@@ -104,12 +106,21 @@ public class WorldGeneratorOre implements IWorldGenerator {
             }
         }
         if (ConfigurationHandler.generateTungsten) {
-            for (int i = 0; i <= 1; i++) {
+            for (int i = 0; i < 1; i++) {
                 xPos = xChunk + random.nextInt(16);
                 yPos = 10 + random.nextInt(16);
                 zPos = zChunk + random.nextInt(16);
                 oreTungsten.generate(world, random, new BlockPos(xPos, yPos, zPos));
             }
         }
+        /*if (ConfigurationHandler.generateMarble) {
+            marbleVein = new WorldGenMinable(ModBlocks.blockStone.getStateFromMeta(0), random.nextInt(4096));
+            for (int i = 0; i < 4; i++) {
+                xPos = xChunk + random.nextInt(16);
+                yPos = 32 + random.nextInt(32);
+                zPos = zChunk + random.nextInt(16);
+                marbleVein.generate(world, random, new BlockPos(xPos, yPos, zPos));
+            }
+        }*/
     }
 }
